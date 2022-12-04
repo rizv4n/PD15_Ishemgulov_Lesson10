@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <title>Коржик</title>
+  </head>
+  <body>
+        <h1>Найдено кандидатов со скилом {{ skill }} : {{ numb }}</h1>
+        {% for item in items %}
+            <p><a href="/candidate/{{ item[1] }}">{{ item[0] }}</a></p>
+        {% endfor %}
+  </body>
+</html>
