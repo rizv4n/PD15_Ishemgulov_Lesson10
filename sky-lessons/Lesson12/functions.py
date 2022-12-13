@@ -1,15 +1,16 @@
 import json
 
-try:
-    def load_posts():
-        """
-        Функция для загрузки данных из файла
-        """
+
+def load_posts():
+    """
+    Функция для загрузки данных из файла
+    """
+    try:
         with open("posts.json", encoding='utf-8') as file:
             file_convert = json.loads(file.read())
             return file_convert
-except:
-    print("Файл posts.json отсутствует или не хочет превращаться в список")
+    except:
+        print("Файл posts.json отсутствует или не хочет превращаться в список")
 
 
 def del_points(string):
