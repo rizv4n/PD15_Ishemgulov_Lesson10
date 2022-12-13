@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, send_from_directory
 
 from functions import get_post_by_word, load_posts
 from loader.loader import loader_blueprint, uploads_blueprint
@@ -17,17 +17,17 @@ app.register_blueprint(uploads_blueprint)
 @app.route("/search")
 def search_page():
     s = request.args['s']
-    if s == [' '] or ['']:
+    if s == ' ' or s == '':
         posts = [i for i in load_posts()]
     else:
         posts = get_post_by_word(s)
     logging.info('Поиск выполнен')
-    return render_template('post_list.html', posts=posts)
+    return render_template('post_list.html', posts=posts, s=s)
 
 
-# @app.route("/uploads/<path:path>")
-# def static_dir(path):
-#     return send_from_directory("uploads", path)
+@app.route("/uploads/<path:path>")
+def static_dir(path):
+   return send_from_directory("uploads", path)
 
 
 app.run()

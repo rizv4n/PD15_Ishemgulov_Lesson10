@@ -21,9 +21,10 @@ def page_post_upload():
     picture = request.files.get("picture")
     post_content = request.form['content']
     filename = picture.filename
+    format = filename.split(".")[-1]
     if not post_content:
         return render_template('post_is_empty.html')
-    elif '.jpg' or 'jpeg' or '.png' not in filename:
+    elif format not in ['jpg', 'jpeg', 'png']:
         return render_template('post_img_error.html')
     else:
         try:
