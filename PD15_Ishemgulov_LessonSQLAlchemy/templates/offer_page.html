@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Предложение</title>
+</head>
+<body>
+
+<main>
+
+    <h1>Предложение номер {{sid}}</h1>
+    {{content}}
+    <form action="/offers/{{sid}}/delete">
+        <p></p>
+        <div>
+            <input type="submit" value="Удалить заказ" class="button">
+        </div>
+    </form>
+
+</main>
+</body>
+</html>

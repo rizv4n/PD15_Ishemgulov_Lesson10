@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание пользователя</title>
+</head>
+<body>
+
+<main>
+
+    <h1>Создание пользователя</h1>
+    <h4>Введите данные пользователя</h4>
+    <form action="/users" method="POST">
+        <div>First name:
+            <input type="text" name="first_name">
+        </div>
+        <p></p>
+        <div>Last name:
+            <input type="text" name="last_name">
+        </div>
+        <p></p>
+        <div>Age:
+            <input type="number" name="age" maxlength="2">
+        </div>
+        <p></p>
+        <div>Email:
+            <input type="email" name="email">
+        </div>
+        <p></p>
+        <div>Role:
+            <input type="text" name="role">
+        </div>
+        <p></p>
+        <div>Phone:
+            <input type="number" name="phone" maxlength="10">
+        </div>
+        <p></p>
+        <div>
+            <input type="submit" value="Добавить" class="button">
+        </div>
+    </form>
+
+</main>
+</body>
+</html>
