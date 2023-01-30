@@ -21,21 +21,15 @@ class User(db.Model):
     role = db.Column(db.String(100))
     phone = db.Column(db.String(100))
 
-    # orders = relationship("Order")
-    # offers = relationship("Offer")
-
 
 class Offer(db.Model):
     __tablename__ = "offers"
 
     id = db.Column(db.Integer, primary_key=True)
-    order_id = db.Column(db.Integer)
-    executor_id = db.Column(db.Integer)
-    # order_id = db.Column(db.Integer, db.ForeignKey("orders.id"))
-    # executor_id = db.Column(db.Integer, db.ForeignKey("users.id"))
-    #
-    # orders = relationship("Order")
-    # offers = relationship("User")
+    order_id = db.Column(db.Integer, db.ForeignKey("orders.id"))
+    executor_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+    orders = relationship("Order")
+    offers = relationship("User")
 
 
 class Order(db.Model):
@@ -48,13 +42,10 @@ class Order(db.Model):
     end_date = db.Column(db.Date)
     address = db.Column(db.String(100))
     price = db.Column(db.Integer)
-    customer_id = db.Column(db.Integer)
-    executor_id = db.Column(db.Integer)
-    # customer_id = db.Column(db.Integer, db.ForeignKey("offers.id"))
-    # executor_id = db.Column(db.Integer, db.ForeignKey("users.id"))
-    #
-    # orders = relationship("User")
-    # offers = relationship("Offer")
+    customer_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+    executor_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+    customer = relationship("User", foreign_keys=[customer_id])
+    executor = relationship("User", foreign_keys=[executor_id])
 
 
 db.drop_all()
