@@ -1,5 +1,4 @@
 from flask import Flask, jsonify
-import logging
 import json
 
 from app.feed.views import feed_blueprint
@@ -10,9 +9,6 @@ from app.bookmarks.views import bookmarks_blueprint, bookmarks_add_blueprint, bo
 
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
-
-logging.basicConfig(filename='data/api.log', filemode='w', format='%(asctime)s : %(levelname)s : %(message)s',
-                    level=logging.INFO)
 
 app.register_blueprint(feed_blueprint)
 app.register_blueprint(post_blueprint)
@@ -25,7 +21,6 @@ app.register_blueprint(bookmarks_del_blueprint)
 
 @app.route('/api/posts')
 def api_posts():
-    logging.info("Request /api/posts")
     with open('data/posts.json', encoding='utf-8') as file:
         file_api = json.loads(file.read())
         return jsonify(file_api)
@@ -33,7 +28,6 @@ def api_posts():
 
 @app.route('/api/posts/<int:post_id>')
 def api_post(post_id):
-    logging.info(f"Request /api/posts/{post_id}")
     with open('data/posts.json', encoding='utf-8') as file:
         file_api = json.loads(file.read())
         for i in file_api:

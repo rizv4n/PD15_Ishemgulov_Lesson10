@@ -1,0 +1,41 @@
+[{
+    "q": "How many days do we have in a week?",
+    "d": "1",
+    "a": "7"
+}, {
+    "q": "How many letters are there in the English alphabet?",
+    "d": "2",
+    "a": "26"
+}, {
+    "q": "How many sides are there in a triangle?",
+    "d": "2",
+    "a": "3"
+}, {
+    "q": "How many years are there in one Millennium?",
+    "d": "4",
+    "a": "1000"
+}, {
+    "q": "How many people live in London? (more than _ million)",
+    "d": "3",
+    "a": "9"
+}, {
+    "q": "London is more than _ years old",
+    "d": "4",
+    "a": "2000"
+}, {
+    "q": "Great Britain is divided into _ parts",
+    "d": "5",
+    "a": "3"
+}, {
+    "q": "Piccadilly Circus is the meeting point of _ streets",
+    "d": "5",
+    "a": "6"
+}, {
+    "q": "How many states are there in the USA?",
+    "d": "1",
+    "a": "50"
+}, {
+    "q": "How many sides does hexagon have?",
+    "d": "3",
+    "a": "6"
+}]
