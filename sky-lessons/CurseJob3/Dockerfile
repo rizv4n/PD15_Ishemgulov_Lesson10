@@ -4,7 +4,6 @@ WORKDIR /code
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 COPY . .
-COPY migrations migrations
 ENV FLASK_APP=run.py
 
 
