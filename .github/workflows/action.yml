@@ -14,3 +14,4 @@ jobs:
         run: docker tag skypro_rishemgulov:$GITHUB_REF_NAME-$GITHUB_RUN_ID:first_tag rishemgulov/skypro_rishemgulov:$GITHUB_REF_NAME-$GITHUB_RUN_ID:first_tag
       - name: docker push
         run: docker push rishemgulov/skypro_rishemgulov:$GITHUB_REF_NAME-$GITHUB_RUN_ID:first_tag
+
